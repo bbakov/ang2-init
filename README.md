@@ -29,3 +29,11 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Customization and improvement
+
+webpack - Pack the whole app into bundle file. 
+`Configuration: webpack.config.js`
+
+http://courses.angularclass.com/courses/angular-2-fundamentals/lectures/1280055
+
