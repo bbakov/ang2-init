@@ -1,0 +1,16 @@
+menu: {{inputActiveMenu}}
+
+
+<div>
+	<ul *ngIf="listNews">
+		<li *ngFor="let news of listNews; let i = index">
+			<a (click)="onClick(i)">{{news.title}}</a>
+		</li>
+	</ul>
+
+	<div class="newsInfo" *ngIf="activeNews">
+		<h3>{{activeNews.title}}</h3>
+		{{activeNews.text}}
+	</div>
+</div>
+

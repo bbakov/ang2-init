@@ -1,0 +1,7 @@
+<div>
+	<ul *ngIf="menues">
+		<li *ngFor="let menu of menues; let i = index">
+			<a (click)="onClick(i)" [class.active]="menu.active">{{menu.title}}</a>
+		</li>
+	</ul>
+</div>

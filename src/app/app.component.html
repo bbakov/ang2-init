@@ -1,3 +1,11 @@
+<header>
+	<app-menu [cfgActiveMenu]="activeMenu" (changeMenu)="onChange($event)"> ... MENU ... </app-menu>
+</header>
+
 <h1>
   {{title}}
 </h1>
+
+<hr>
+
+<app-news [inputActiveMenu]="outputActiveMenu"> ... News ... </app-news>
