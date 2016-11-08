@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 import { MenuService } from '../menu.service';
 import { Menu } from '../menu';
 
@@ -16,7 +18,9 @@ export class MenuComponent implements OnInit {
   @Output() changeMenu = new EventEmitter<string>();
 
   menues: Menu[];
-  constructor(private service: MenuService) { }
+  constructor (
+    private service: MenuService,
+    private router: Router) { }
 
   ngOnInit() {
     if (this.cfgActiveMenu) {
@@ -31,6 +35,8 @@ export class MenuComponent implements OnInit {
   	this.getMenues();
 
     this.changeMenu.emit(this.getTitle());
+
+    this.router.navigate(['/detail', menuIndex]);
   }
 
   getMenues() {

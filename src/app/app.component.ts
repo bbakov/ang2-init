@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   activeMenu: number = 2;
   outputActiveMenu = "Money";
   
+  title = 'Tour of Heroes';
+
   ngOnInit() {  }
 
   onChange(event) {
