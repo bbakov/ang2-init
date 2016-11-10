@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppRouterModule } from './app-router.module';
-
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { NewsComponent } from './news/news.component';
