@@ -3,10 +3,11 @@ import { Injectable } from '@angular/core';
 import { Menu } from './menu';
 
 const Menues: Menu[] = [
-  {id: 1, title: 'Home', href: 'home', active: true},
+  {id: 1, title: 'Home', href: '', active: true},
   {id: 2, title: 'News', href: 'news', active: false},
-  {id: 3, title: 'Money', href: 'money', active: false},
-  {id: 4, title: 'Resources', href: 'resources', active: false},
+  {id: 3, title: 'Tools', href: 'tools', active: false},
+  {id: 3, title: 'Traders', href: 'traders', active: false},
+  {id: 4, title: 'Lessons', href: 'lessons', active: false},
 ];
 
 
@@ -22,17 +23,15 @@ export class MenuService {
   }
 
   setActive(index: number): void {
-	  this.menues[this.activeIndex].active = false;
-
-  	this.activeIndex = index;
-	  this.menues[this.activeIndex].active = true;  	
+    this.menues[this.activeIndex].active = false;
+    this.activeIndex = index;
+    this.menues[this.activeIndex].active = true;  	
   }
 
   getActive() {
     var activeMenu;
     activeMenu = this.menues[this.activeIndex];
     activeMenu.index = this.activeIndex;
-
     return activeMenu;
   }
 }

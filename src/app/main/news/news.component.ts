@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { NewsService } from '../news.service';
-import { News } from '../news';
+import { NewsService } from '../../services/news/news.service';
+import { News } from '../../services/news/news';
 
 
 @Component({
@@ -29,7 +29,6 @@ export class NewsComponent implements OnInit {
   }
 
   onClick(newsIndex) {
-  	console.log(" handle CLICK :::");
   	this.activeNews = this.listNews[newsIndex];
   }
 

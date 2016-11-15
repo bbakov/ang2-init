@@ -4,25 +4,32 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
-import { AppRouterModule } from './app-router.module';
+import { AppRouterModule } from './router/router.module';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { NewsComponent } from './news/news.component';
-import { HomeComponent } from './home/home.component';
+import { NewsComponent } from './main/news/news.component';
+import { ToolsComponent } from './main/tools/tools.component';
+import { TradersComponent } from './main/traders/traders.component';
+import { LessonsComponent } from './main/lessons/lessons.component';
+import { HomeComponent } from './main/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     NewsComponent,
+    ToolsComponent,
+    TradersComponent,
+    LessonsComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRouterModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    AppRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

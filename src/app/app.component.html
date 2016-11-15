@@ -6,11 +6,11 @@
   {{title}}
 </h1>
 
-<hr>
-
 <app-news [inputActiveMenu]="outputActiveMenu"> ... News ... </app-news>
 
-<hr>
-<div style="border: 1px solid green; padding: 20px;">
-	<router-outlet></router-outlet>
-</div>
+<fieldset style="border: 1px solid green; padding: 20px;">
+    <legend>Router OUTPUT ::: </legend>
+    <form>
+		<router-outlet></router-outlet>
+    </form>
+</fieldset>

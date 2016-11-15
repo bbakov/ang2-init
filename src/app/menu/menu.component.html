@@ -2,6 +2,8 @@
 	<ul *ngIf="menues">
 		<li *ngFor="let menu of menues; let i = index">
 			<a (click)="onClick(i)" [class.active]="menu.active">{{menu.title}}</a>
+			<!-- <a [class.active]="menu.active" routerLink="{{menu.href}}">{{menu.title}}</a> -->
 		</li>
 	</ul>
+	<a [routerLink]="['/news/1', { foo: 'foo' }]">Dragon Crisis</a>
 </div>

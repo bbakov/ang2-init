@@ -2,8 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Router } from '@angular/router';
 
-import { MenuService } from '../menu.service';
-import { Menu } from '../menu';
+import { MenuService } from '../services/menu/menu.service';
+import { Menu } from '../services/menu/menu';
 
 @Component({
   selector: 'app-menu',
@@ -35,8 +35,10 @@ export class MenuComponent implements OnInit {
   	this.getMenues();
 
     this.changeMenu.emit(this.getTitle());
+    console.log(this.service.getActive(), this.service.getActive().href);
 
-    this.router.navigate(['/detail', menuIndex]);
+    this.router.navigate([this.service.getActive().href]);
+    // this.router.navigate(['/detail', menuIndex]);
   }
 
   getMenues() {
