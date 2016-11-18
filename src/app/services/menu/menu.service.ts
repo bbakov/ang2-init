@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+
+import { Observable }       from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
 
 import { Menu } from './menu';
 
@@ -16,11 +20,26 @@ export class MenuService {
   activeIndex: number = 0; 
   menues: Menu[] = Menues; //all menues
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getAll(): Menu[] {
-    return this.menues;
+  // getAll(): Menu[] {
+  getAll() {
+    // return this.menues;
+    return this.http.get('../app/services/menu/menu.json')
+        .do(data => console.log('server data:', data))
+        .map(this.handleData)
+        .catch(this.handleError);
   }
+
+  handleData (res: Response) {
+    let body = res.json();
+    return body.data || { };
+  }
+
+  handleError = (err: Response | any) => {
+    console.log("error Arrow func :::", err)
+    return Observable.throw({txt: "text"});
+  }  
 
   setActive(index: number): void {
     this.menues[this.activeIndex].active = false;

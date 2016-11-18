@@ -42,7 +42,9 @@ export class MenuComponent implements OnInit {
   }
 
   getMenues() {
-  	this.menues = this.service.getAll();	
+    this.service.getAll().subscribe(
+      data => this.menues = data,
+      error => console.error("ERROR !!! ::: ",error));
   }
 
   getTitle(): string {
