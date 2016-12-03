@@ -13,6 +13,7 @@ import { ToolsComponent } from './main/tools/tools.component';
 import { TradersComponent } from './main/traders/traders.component';
 import { LessonsComponent } from './main/lessons/lessons.component';
 import { HomeComponent } from './main/home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './main/home/home.component';
     ToolsComponent,
     TradersComponent,
     LessonsComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,37 @@
 
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
- 
+
+html { 
+  height: 100%; 
+  font-size: 100%;
+  font: 400 1em/1.4 Open Sans, sans-serif;
+} 
+
 body {
-  margin: 10;
-  font-family: Roboto, sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  color: #212121;
+}
+
+.bodyBox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.borderBox {
+    border: 1px solid darkgreen;
 }

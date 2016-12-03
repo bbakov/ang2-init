@@ -1,12 +1,26 @@
-div {
+nav {
     margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #f5f6f7;
+}
+
+#fxLogo {
+    float: left;
+    width: 200px;
+    height: 50px;
+/*    background: -webkit-linear-gradient(80deg, #0fb8ad 0%, #1fc8db 51%, #4CAF50 75%);
+    background: -o-linear-gradient(80deg, #0fb8ad 0%, #1fc8db 51%, #4CAF50 75%);
+    background: linear-gradient(170deg, #0fb8ad 0%, #1fc8db 51%, #4CAF50 75%);*/
+    border-radius: 10px 0px;
 }
 
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     overflow: hidden;
+    max-width: 80%;
 }
 
 li {
@@ -19,15 +33,17 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     cursor: pointer;
+    color: #009688;
+    font-size: 110%;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #4CAF50;
-    color: whitesmoke;
-}
-
-.active {
-    background-color: #4CAF50;
-    color: whitesmoke;
+li a:hover, .active {
+    /* background-color: #4CAF50; */
+/*    background: -webkit-linear-gradient(80deg, #0fb8ad 0%, #1fc8db 51%, #4CAF50 75%);
+    background: -o-linear-gradient(80deg, #0fb8ad 0%, #1fc8db 51%, #4CAF50 75%);
+    background: linear-gradient(170deg, #0fb8ad 0%, #1fc8db 51%, #4CAF50 75%);*/
+    color: #B2DFDB;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { MenuService } from '../services/menu/menu.service';
 import { Menu } from '../services/menu/menu';
@@ -17,10 +17,14 @@ export class MenuComponent implements OnInit {
 
   @Output() changeMenu = new EventEmitter<string>();
 
+  routeBind: any;
+
   menues: Menu[];
   constructor (
     private service: MenuService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute
+    ) {}
 
   ngOnInit() {
     if (this.cfgActiveMenu) {
@@ -37,17 +41,25 @@ export class MenuComponent implements OnInit {
     this.changeMenu.emit(this.getTitle());
     console.log(this.service.getActive(), this.service.getActive().href);
 
-    this.router.navigate([this.service.getActive().href]);
+    let href;
+    href = this.service.getActive().href;
+    console.log(href)
+    href && this.router.navigate([href]);
     // this.router.navigate(['/detail', menuIndex]);
   }
 
   getMenues() {
     this.service.getAll().subscribe(
       data => this.menues = data,
-      error => console.error("ERROR !!! ::: ",error));
+      error => console.error("ERROR !!! :::", error));
   }
 
   getTitle(): string {
     return this.service.getActive().title;
+  }
+
+  ngOnDestroy() {
+    // Clean sub to avoid memory leak
+    this.routeBind.unsubscribe();
   }
 }

@@ -1,0 +1,78 @@
+header, footer {
+	/*https://philipwalton.github.io/solved-by-flexbox/*/
+	-webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+
+    padding: 24px;
+    padding: 1.5rem;
+}
+
+.headerBox {
+	background-color: rgba(43,44,46,0.95);
+	background-color: #eee;
+}
+
+.mainBox {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 1.5em;
+
+	-webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; 
+}
+
+
+
+.footerBox {
+	background-color: #eee;
+}
+
+
+
+.centerBox {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 2em;
+    margin: 0;
+    max-width: 1300px;
+}
+
+.rightBox {
+	-webkit-box-flex: 0;
+    -webkit-flex: 0 0 12em;
+    -ms-flex: 0 0 12em;
+    flex: 0 0 12em;
+	order: -1;
+
+}
+
+/* MEDIA queries for big screens */
+/*@media (min-width:768px) {*/
+@media (min-width: 1024px) {
+	.mainBox {
+		-webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+	.rightBox {
+		order: 1;
+	}
+}

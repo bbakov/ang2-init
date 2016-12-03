@@ -1,0 +1,11 @@
+nav {
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #f5f6f7;
+
+    color: #757575;
+
+    padding: 24px;
+    padding: 1.5rem;
+}

@@ -1,4 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+
+import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
+
+
+@Component({
+  selector: 'settings-dialog',
+  template: `
+    <label>Would you like dog pics every min???</label>
+    <md-slide-toggle></md-slide-toggle>
+  `
+})
+export class SettingsDialog {
+
+}
+
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +22,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  dogs = [
+    {rows: 2, name: "Mal", human: "Jeremy", age: 5},
+    {rows: 1, name: "Molly", human: "David", age: 5},
+    { rows: 1, name: "Sophie", human: "Alex", age: 8},
+    {rows: 2, name: "Taz", human: "Joey", age: '11 weeks'},
+    { rows: 1, name: "Kobe", human: "Igor", age: 5},
+    {rows: 2, name: "Porter", human: "Kara", age: 3},
+    { rows: 1, name: "Stephen", human: "Stephen", age: 8},
+    {rows: 1, name: "Cinny", human: "Jules", age: 3},
+    { rows: 1, name: "Hermes", human: "Kara", age: 3},
+  ];
+  @ViewChild('sidenav') sidenav: MdSidenav;
+  currentDog = {};
+  isDarkTheme = true;
 
-  constructor() { }
+  constructor(public dialog: MdDialog, public vcr: ViewContainerRef) { }
 
   ngOnInit() {
   }
 
+  openDialog() {
+    const config = new MdDialogConfig();
+    config.viewContainerRef = this.vcr;
+    this.dialog.open(SettingsDialog, config);
+  }
+
+  showDog(dog) {
+    this.currentDog = dog;
+    this.sidenav.open();
+  }
 }

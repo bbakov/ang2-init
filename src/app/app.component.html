@@ -1,16 +1,27 @@
-<header>
+<header class="headerBox" role="navigation">
 	<app-menu [cfgActiveMenu]="activeMenu" (changeMenu)="onChange($event)"> ... MENU ... </app-menu>
 </header>
 
-<h1>
-  {{title}}
-</h1>
+<main class="mainBox">
+		<div class="centerBox borderBox">
+			<h1>
+			  {{title}}
+			</h1>
 
-<app-news [inputActiveMenu]="outputActiveMenu"> ... News ... </app-news>
+			<app-news [inputActiveMenu]="outputActiveMenu"> ... News ... </app-news>
 
-<fieldset style="border: 1px solid green; padding: 20px;">
-    <legend>Router OUTPUT ::: </legend>
-    <form>
-		<router-outlet></router-outlet>
-    </form>
-</fieldset>
+			<fieldset style="border: 1px solid green; padding: 20px;">
+			    <legend>Router OUTPUT ::: </legend>
+			    <form>
+					<router-outlet></router-outlet>
+			    </form>
+			</fieldset>
+		</div>
+
+		<div class="rightBox borderBox">
+		</div>
+</main>
+
+<footer class="footerBox">
+	<app-footer></app-footer>
+</footer>
